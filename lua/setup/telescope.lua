@@ -20,7 +20,7 @@ require('telescope').setup {
         winblend = 0,
         prompt_prefix = icons.ui.Search .. ' ',
         selection_caret = icons.ui.Forward .. ' ',
-        entry_prefix = '    ',
+        entry_prefix = '  ',
         initial_mode = 'insert',
         border = true,
         preview = false,
