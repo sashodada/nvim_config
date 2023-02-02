@@ -7,6 +7,12 @@ require'nvim-tree'.setup({
                 { key = "<C-e>", action = "" }
             }
         }
+    },
+    tab = {
+        sync = {
+            open = true,
+            close = true,
+        }
     }
 })
 
