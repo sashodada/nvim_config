@@ -1,4 +1,4 @@
-local u = require'utils'
+local v = require'utils.vim'
 
 require'nvim-tree'.setup({
     view = {
@@ -12,10 +12,10 @@ require'nvim-tree'.setup({
 
 local nvim_tree_group = vim.api.nvim_create_augroup('NvimTree', {clear = true})
 local cmdopts = {silent = true}
-u.multiautocmd(
+v.multiautocmd(
     {
-        { 'BufEnter', function() u.map('n', '<C-e>', ':NvimTreeClose<CR>', cmdopts) end},
-        { 'BufLeave', function() u.multimap({'n', 'v'}, '<C-e>', ':NvimTreeFocus<CR>', cmdopts) end},
+        { 'BufEnter', function() v.map('n', '<C-e>', ':NvimTreeClose<CR>', cmdopts) end},
+        { 'BufLeave', function() v.multimap({'n', 'v'}, '<C-e>', ':NvimTreeFocus<CR>', cmdopts) end},
     },
     nvim_tree_group,
     'NvimTree_*'

@@ -1,3 +1,4 @@
+local uv = require'utils.vim'
 local options = {
     backup = false,                          -- creates a backup file
     clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
@@ -42,3 +43,10 @@ vim.opt.listchars = {
 }
 
 vim.opt.list = true
+
+local termGroup = uv.create_autogrp('Term', { clear = true })
+uv.create_autocmd('TermOpen', {
+    command = 'setlocal nonumber norelativenumber',
+    group = termGroup,
+    pattern = {'*'},
+})
